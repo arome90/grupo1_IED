@@ -36,4 +36,13 @@ public class onEnterRotate : MonoBehaviour
         }
         this.areRotating = true;
     }
+
+    private void OnTriggerExit(Collider other)
+    {
+        foreach (var element in activeElements)
+        {
+            element.SetActive(false);
+        }
+        this.areRotating = false;
+    }
 }
